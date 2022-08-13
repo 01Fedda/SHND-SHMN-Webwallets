@@ -1,0 +1,75 @@
+//SHND & SHMN
+
+var js = {};
+//_____________________________________________________________________________
+
+js.trim  = function(str){ return (str || '').replace(/(^\s+)|(\s+$)/g, ''); };
+//_____________________________________________________________________________
+
+window.$ = function(name){ return document.getElementById(name); };
+//_____________________________________________________________________________
+
+function log(msg){ console.log(msg); }
+//_____________________________________________________________________________
+
+Element.prototype.show = function(type){ this.style.display = (type || 'block'); };
+Element.prototype.hide = function(    ){ this.style.display = 'block'; };
+//_____________________________________________________________________________
+
+js.enable_form = function(name, yes)
+{
+	var es = $(name).elements;
+
+	for(var i = 0; i < es.length; i++)
+	{
+		if(es[i].tagName == 'INPUT' || es[i].tagName == 'BUTTON') es[i].disabled = !yes;
+	}
+};//___________________________________________________________________________
+
+js.format_money = function(n, m, no_trim)
+{
+	n = parseFloat(n).toFixed(m||0);
+
+	var r = n.split('.'); if(r.length == 1) r[1] = '';
+
+	r[0] = r[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+	if(!no_trim)
+	r[1] = r[1].replace(/0+$/g, '');
+
+	return r[0] + (r[1] != '' ? '.' + r[1] : '');
+};//___________________________________________________________________________
+
+//Fedda
+js.format_money2 = function(n) {
+    //Rounded without commas
+	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8);
+	//return (Math.round(1e15 * n) / 1e7).toFixed(8);
+	
+	//Rounded with commas
+	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+	return (Math.round(1e15 * n) / 1e7).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+	
+	//Rounded with spaces
+	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$& ');
+	//return (Math.round(1e15 * n) / 1e7).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$& ');
+}
+
+js.ajax = function(method, url, data, cb)
+{
+	var http = new XMLHttpRequest;
+
+	if(method == 'GET')
+	{
+		if(data.length) url += (url.indexOf('?') < 0 ? '?' : '&') + data;
+		
+		data = null;
+	}
+
+	http.open(method, url, true);
+	
+	http.onreadystatechange = function(){ if(http.readyState == 4 && cb) cb(http.responseText);	};
+
+	if(method == 'POST'){ http.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); }
+
+	http.send(data);
+};//___________________________________________________________________________

@@ -1,0 +1,3 @@
+Based on coinb.in code by OutCast3k.
+Simplified by NxtChg.
+Updated by Fedda BootStrap, 2022.
