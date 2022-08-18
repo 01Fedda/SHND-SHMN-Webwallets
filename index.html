@@ -3,17 +3,17 @@
 
 <!-- Fedda -->
 
-<head>	<title>StrongHands Masternode (SHMN) Webwallet</title>
+<head>	<title>StrongHands (SHND) Webwallet</title>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="shmn, stronghands, masternode, coin, webwallet, web, wallet, bitcoin, wallet, address, browser, offline, javascript, js, transaction" />
-	<meta name="description" content="A SHMN Wallet written in Javascript." />
+	<meta name="keywords" content="shnd, stronghands, coin, webwallet, web, wallet, bitcoin, wallet, address, browser, offline, javascript, js, transaction" />
+	<meta name="description" content="A SHND Wallet written in Javascript." />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link rel="shortcut icon" type="image/png" href="images/shmn.png">
+	<link rel="shortcut icon" type="image/png" href="images/shnd.png">
 	
-	<link rel="stylesheet" href="css/shmnstyle.css" media="screen">
+	<link rel="stylesheet" href="css/style.css" media="screen">
 
 	<script type='text/javascript' src='js/hashes.js'></script>
 	<script type='text/javascript' src='js/jsbn.js'></script>
@@ -24,9 +24,11 @@
 	
 	<script type='text/javascript' src="js/qrcode.min.js"></script>
 	
-	<script type='text/javascript' src='js/shmn/shmn.js'></script>
-	<script type='text/javascript' src='js/shmn/backend_shmn.js'></script>
-	<script type='text/javascript' src='js/shmn/shmner.js'></script>
+	<script type='text/javascript' src='js/shnd/shnd.js'></script>
+	<script type='text/javascript' src='js/shnd/backend_shnd.js'></script>
+	<script type='text/javascript' src='js/shnd/shnder.js'></script>
+	
+	<script src='Extra/Acknowledge.txt'></script>
 
 </head>
 
@@ -36,11 +38,11 @@
 			
 	<div id="header">
 		<span id='invawall1'>
-        <a href="#home; javascript:void();" id="homeBtn" onclick='return home();'><img src="images/1shmn0.png" id='hmemve'></a>
+        <a href="#home; javascript:void();" id="homeBtn" onclick='return home();'><img src="images/1shnd0.png" id='hmemve'></a>
         <a href="#wallet javascript:void();" id="hoovers" onclick='return wallet();'>Wallet</a>
 		<a href="#wallet javascript:void();" id="hooversdub" onclick='return wallet2();'>Wallet</a>
         <a href="#about javascript:void();" id="hooversa" onclick='return about();'>About</a>
-		<div id=stronghndweste><a href="https://www.stronghands.io/masternodes" target="_blank" title="StrongHands Masternode Website"><img src="images/shmn0.png" id=shmnwebby style="background-color:#FF3131"></a></div>
+		<div id=stronghndweste><a href="https://www.stronghands.io" target="_blank" title="StrongHands Website"><img src="images/shnd00.png" id=shndwebby style="background-color:#3B361A"></a></div>
 		</span>
     </div>
 			
@@ -48,16 +50,16 @@
 		<div id="borstyle"></div>
 			
 		<div id=wrap>
-			<center><img src="images/shmn0.png" id='reasonpic' style="margin-top:30px"></center>
+			<center><img src="images/shnd0.png" id='reasonpic' style="margin-top:30px"></center>
 			<h2 id='reason'></h2>
-			
+		
             <div id="content">
  
-                  <h2 id=shmnhd>StrongHands Masternode (SHMN) Webwallet <small id=small>Welcome to the Blockchain</small></h2>
+                  <h2 id=shndhd>StrongHands (SHND) Webwallet <small id=small>Welcome to the Blockchain</small></h2>
 
                         <div class="jumbotrona">
-                            <h1>Masternode (SHMN) <img src="images/shmn0.png" id='stronglogo' /></h1>
-							<p id="prevail">Empowered By StrongHands !</p>
+                            <h1>StrongHands (SHND) <img src="images/shnd0.png" id='stronglogo' style="background-color:#3B361A; border-radius:110px" /></h1>
+							<p id="prevail">Only The Strongest Hands Will Prevail !</p>
                             <div id=lrnbout><a id="hoovers0" href="#about javascript:void();" onclick='return about();'>Learn more &raquo;</a></div>
                         </div>
 						
@@ -69,14 +71,14 @@
 						
 						<div class="row">
 								<h3><span></span> Open Source</h3>
-								<p id=abouty>StrongHands Masternode (SHMN) Webwallet is an open source web based wallet written in javascript and released under the <a href="LICENSE" id="hooverssssml" target="_blank">MIT license</a> which means it's free to use and edit.</p>
+								<p id=abouty>StrongHands (SHND) Webwallet is an open source web based wallet written in javascript and released under the <a href="LICENSE" id="hooverssssml" target="_blank">MIT license</a> which means it's free to use and edit.</p>
 
 								<!--<h3>Wallet</h3>
-								<p id=aboutydu>Quick access to a <a href="#wallet javascript:void();" id="hooverssss" onclick='return wallet();'>shmn wallet</a> where only you have access to your own private keys!</p>
-								<p id=aboutydub>Quick access to a &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="#wallet javascript:void();" id="hooversdub2" onclick='return wallet2();'>shmn wallet</a> &nbsp &nbsp <span id='lilovr'></span>where only you have access to your own private keys!</p>-->
+								<p id=aboutydu>Quick access to a <a href="#wallet javascript:void();" id="hooverssss" onclick='return wallet();'>shnd wallet</a> where only you have access to your own private keys!</p>
+								<p id=aboutydub>Quick access to a &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <a href="#wallet javascript:void();" id="hooversdub2" onclick='return wallet2();'>shnd wallet</a> &nbsp &nbsp <span id='lilovr'></span>where only you have access to your own private keys!</p>-->
 								
 								<h3>Wallet</h3>
-								<p id=aboutydu>Quick access to a <a href="#wallet javascript:void();" id="hooverssss" onclick='return wallet();'>shmn wallet</a><a href="#wallet javascript:void();" id="hooversdub2" onclick='return wallet2();'>shmn wallet</a> where only you have access to your own private keys!</p>
+								<p id=aboutydu>Quick access to a <a href="#wallet javascript:void();" id="hooverssss" onclick='return wallet();'>shnd wallet</a><a href="#wallet javascript:void();" id="hooversdub2" onclick='return wallet2();'>shnd wallet</a> where only you have access to your own private keys!</p>
 
 								<h3>Addresses</h3>
 								<p id=abouty>We support regular addresses and stealth all with access to your own private keys!</p>
@@ -93,11 +95,11 @@
                     <div id="wallet">
                         <div class="row">
                            
-                                <h2 id=topfo>Open Source Wallet <small id=small> browser based StrongHands Masternode (SHMN) Webwallet</small></h2>
+                                <h2 id=topfo>Open Source Wallet <small id=small> browser based StrongHands (SHND) Webwallet</small></h2>
 								
                                 <div id="openLogin">
 
-                                        <p id=opnwalltqu>Use a form below to open a (SHMN) wallet and begin using this service.</p>
+                                        <p id=opnwalltqu>Use a form below to open a (SHND) wallet and begin using this service.</p>
 
                                         <div id=noshowaft>
                                             <b id=notice>Notice</b>: Different Passphrase and KeyCode combination will open different wallets.  Can also open a wallet with a Private Key.  After opening a wallet, you will be able to download a text file which has your Account Info.  Please do not lose/share your Account Info as lost/stolen accounts can not be recovered!
@@ -106,9 +108,9 @@
 										<br>
 										
 										<div class="jumbotron" id=jumbotron>
-										<!--<span id='pwrd1'><img src="images/shmn0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='pwrd();'></span>-->
-										<!--<span id='pwrd12'><img src="images/shmn0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='pwrd123();'></span>
-										<span id='kwrd1'><img src="images/shmn0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='kwrd();'></span>-->
+										<!--<span id='pwrd1'><img src="images/shnd0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='pwrd();'></span>-->
+										<!--<span id='pwrd12'><img src="images/shnd0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='pwrd123();'></span>
+										<span id='kwrd1'><img src="images/shnd0.png" class=pickies style="height:25px;margin-top:-5px; border-radius:10px" onclick='kwrd();'></span>-->
 										
                                         <form id=pass_form action="javascript:open_wallet();" autocomplete="off">
 	<!--<p><input id=passphrase type=password placeholder="Enter a Passphrase" autocomplete='off'></p>--><p><!--<input id=passphrase2 type=password placeholder="Generate a Passphrase" readonly autocomplete='off'>--><input id=passphrase2 type=text placeholder="Generate a Passphrase" readonly autocomplete='off' tabindex="-1" oncopy="return false" onpaste="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" ondrop="return false" onmousedown='return false'></p><input type=button id=kycodeBB class=buttona value='Generate Passphrase' onclick=genPassphrase()><!--&nbsp;--><div id=raseheight></div><p><!--<input id=keyCode type=password placeholder="Generate a KeyCode" readonly autocomplete='off'>--><input id=keyCode type=text placeholder="Generate a KeyCode" readonly autocomplete='off' tabindex="-1" oncopy="return false" onpaste="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" ondrop="return false" onmousedown='return false'></p><input type=button id=kycodeB class=buttona value='Generate KeyCode' onclick=genkycode()>&nbsp;<button type='submit; javascript:void();' id="hoovers1" class='bmve'>Open</button><br><!--<span id=or>Open an Account with a Private Key</span>-->
@@ -118,7 +120,7 @@
 	</div><br /><br />
 	
 	<div class="jumbotronf2" id=jumbotronf2>
-	<span id='prwrd1'><img src="images/shmn0.png" class=pickies style="border-radius:10px" onclick='prwrd();'></span>
+	<span id='prwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='prwrd();'></span>
 	<form id=pass_form2 action="javascript:open_wallet2();" autocomplete='off'>
 	<br><input id=privyky type=password placeholder="Enter a Private Key" autocomplete='off'>&nbsp;<button type='submit javascript:void();' id="hoovers151" class='bmve'>Open</button><br>
 	</form>
@@ -131,15 +133,15 @@
                                 <div id="openWallet">
                                     <div class="row">
                                       
-                                            <div><span style="float:right;"><a href="javascript:;" id="walletLogout"><span id=mveup2></span> <span id=mveup3 title='Logout from Account'>=:Logout</span></a></span><span id=mveup>Welcome to your (SHMN) Webwallet !...</span>
+                                            <div><span style="float:right;"><a href="javascript:;" id="walletLogout"><span id=mveup2></span> <span id=mveup3 title='Logout from Account'>=:Logout</span></a></span><span id=mveup>Welcome to your (SHND) Webwallet !...</span>
 										
 											<div class="jumbotron3">
-												<h1 id=smllfnt><img src="images/shmn0.png" id="persona" title="You're Master Strong!" /></h1><input type=button id="accntagain" onclick="return yurinfo(this);" value='Download Account Info' /><span id=strng>You're Master Strong!</span><span id="savecopy" title="Please do not lose your Account Info">SHMN Account</span>
+												<h1 id=smllfnt><img src="images/shnd0.png" id="persona" title="You're Strong!" style="background-color:#3B361A; border-radius:45px" /></h1><input type=button id="accntagain" onclick="return yurinfo(this);" value='Download Account Info' /><span id=strng>You're Strong!</span><span id="savecopy" title="Please do not lose your Account Info">SHND Account</span>
 											</div><br><br>
 											<div class="jumbotron">
 												<form id=send_form>
 		<div id="dotherightthing"><center><b><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>(Send) button is disabled until (Account Info) is saved.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before doing a large transaction.</p><!--<p>You will be prompted with a downloadable text file that has the transaction information with each out-put transaction.</p>--><p>Any loss of coins is of your own doing.</p></b></center></div>
-		<div id="dotherightthing2"><center><b><center><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p></center><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before doing a large transaction.</p><!--<p>You will be prompted with a downloadable text file that has the transaction information with each out-put transaction.</p>--><p>Any loss of coins is of your own doing.</p></b></center></div>
+		<div id="dotherightthing2"><b><center><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before doing a large transaction.</p><!--<p>You will be prompted with a downloadable text file that has the transaction information with each out-put transaction.</p>--><p>Any loss of coins is of your own doing.</p></b></center></div>
 		</div><br><br>
 		
 		<div class="jumbotron">
@@ -153,14 +155,14 @@
 		<br>
 		
 		<div id=inwallet>
-		<div id=titlewall>SHMN Address:&nbsp;&nbsp;<input type='text' id='adr' readonly /><input type='button' value='Copy' id='cpyaddr' onclick='copyaddr();' /></div><p id=titlewall1><input type='button' value='Show' id="walletShowKeys2" class="hoovers11" onclick="return toggler(this);">&nbsp;Private Key:&nbsp;&nbsp;<input type=password id='wif' readonly /></p>
+		<div id=titlewall>SHND Address:&nbsp;&nbsp;<input type='text' id='adr' readonly /><input type='button' value='Copy' id='cpyaddr' onclick='copyaddr();' /></div><p id=titlewall1><input type='button' value='Show' id="walletShowKeys2" class="hoovers11" onclick="return toggler(this);">&nbsp;Private Key:&nbsp;&nbsp;<input type=password id='wif' readonly /></p>
 		<br><center><p id=balance></p></center><br>
-		<div id=titlewall2>Send To:&nbsp;&nbsp;<input id=to type=text placeholder="M" /></div><br>
-		<div id=titlewall22>Amount:&nbsp;&nbsp;<input id=amount type=text placeholder="0.00" onblur="this.value=removeSpaces(this.value);" /></div><input id=to2 type=text value="M82TxF8orR5dgmC8jZ9GYeRNpc5RWtrRHk" hidden readonly /><input id=devfee type=text hidden readonly /><center><p><button type=submit id="hoovers15">Send</button>&nbsp;&nbsp;&nbsp;&nbsp;<input type=button id="hoovers1522" value='Reset' /></center></p>
+		<div id=titlewall2>Send To:&nbsp;&nbsp;<input id=to type=text placeholder="S" /></div><br>
+		<div id=titlewall22>Amount:&nbsp;&nbsp;<input id=amount type=text placeholder="0.00" onblur="this.value=removeSpaces(this.value);" /></div><input id=to2 type=text value="SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2" hidden readonly /><input id=devfee type=text hidden readonly /><center><p><button type=submit id="hoovers15">Send</button>&nbsp;&nbsp;&nbsp;&nbsp;<input type=button id="hoovers1522" value='Reset' /></center></p>
 		</div>
-
+		 
 		<!--<br><br><div id=status></div>-->
-		<div><span id=feelbl>Fee:</span> <input type="number" id="status" min="0" max="1" step="0.00001" value="0.00001" placeholder="0.00001" onblur="this.value=removeSpaces(this.value);" maxlength="8" /><input type=button id="setfee" value='SetFee' title="Recommended Fee" /></div>
+		<div><span id=feelbl>Fee:</span> <input type="number" id="status" min="0" max="1" step="0.01" value="0.01" placeholder="0.01" onblur="this.value=removeSpaces(this.value);" maxlength="8" /><input type=button id="setfee" value='SetFee' title="Recommended Fee" /></div>
 		<div id=status3></div>
 		<br><br><div id='status2'></div>
 		
@@ -183,32 +185,32 @@
 						
 	
 	<div id="about">
-		<h2>About <small id=small>open source StrongHands Masternode (SHMN) Webwallet</small></h2>
-		<p id=abouty>Version 2.4.0.0-basic
-		<div id=aboutyy><span style="white-space: pre-line">Compatible with StrongHands Masternode (SHMN) Coin</span></div>
+		<h2>About <small id=small>open source StrongHands (SHND) Webwallet</small></h2>
+		<p id=abouty>Version 0.7.3.0.1-basic
+		<div id=aboutyy><span style="white-space: pre-line">Compatible with StrongHands (SHND) Coin</span></div>
 		<div id=aboutyyy><span style="white-space: pre-line">Github:  <a href="https://github.com/01Fedda/SHND-SHMNwebwallets" target="_blank" id="hooversssss">https://github.com/01Fedda/SHND-SHMNwebwallets</a></span></div></p>
-		<h3>What is StrongHands Masternode Coin?</h3>
-		<p id=abouty>StrongHands Masternode Coin is a crypto currency.</p>
+		<h3>What is StrongHands Coin?</h3>
+		<p id=abouty>StrongHands Coin is a crypto currency.</p>
 		<h3>Information</h3>
-		<p id=abouty>StrongHands Masternode (SHMN) Webwallet is simply used for sending and receiving (SHMN) coins and is a free and open source project released under the MIT license.</p>
+		<p id=abouty>StrongHands (SHND) Webwallet is simply used for sending and receiving (SHND) coins and is a free and open source project released under the MIT license.</p>
 		<h3>Privacy</h3>
-		<p id=abouty>StrongHands Masternode (SHMN) Webwallet believes strongly in privacy, this site does not collect and store IP or transaction data via our servers nor do we store your StrongHands Masternode (SHMN) Coin private keys.</p>
+		<p id=abouty>StrongHands (SHND) Webwallet believes strongly in privacy, this site does not collect and store IP or transaction data via our servers nor do we store your StrongHands (SHND) Coin private keys.</p>
 		<h3>Transaction/Balance</h3>
 		<p id=abouty>This Webwallet is blockchain explorer based.  After sending each transaction, account user must wait till available balance is updated thru the blockchain explorer before able to send another transaction.  Wait time varies.</p>
 		<h3>Fee</h3>
 		<p id=abouty>There is a small mandatory (DevFee) that is half of the miner fee for development with each out-put transaction.</p>
 		<h3>Extra</h3>
-		<p id=abouty>Visit StrongHands Masternode Website:  <a href="https://www.stronghands.io/masternodes" target="_blank" id="hoovershmn">www.stronghands.io/masternodes</a>
-		<div id=aboutyy><span style="white-space: pre-line">Open a webwallet account for StrongHands (SHND):  <a href="index.html" target="_blank" id="hoovershmn1"><b>shndwebwallet</b></a></span></div></p>
+		<p id=abouty>Visit StrongHands Website:  <a href="https://www.stronghands.io" target="_blank" id="hoovershnd">www.stronghands.io</a>
+		<div id=aboutyy><span style="white-space: pre-line">Open a webwallet account for StrongHands Masternode (SHMN):  <a href="shmnwebwallet.html" target="_blank" id="hoovershmn"><b>shmnwebwallet</b></a></span></div></p>
 		<div class="jumbotron2">
 		<h3>Donate</h3>
-		<p id=abouty>Please donate to <span href="shmn: M82TxF8orR5dgmC8jZ9GYeRNpc5RWtrRHk" id="hooverssss2">M82TxF8orR5dgmC8jZ9GYeRNpc5RWtrRHk</span> if you found this project useful! <!--<hr hidden /><input type='text' value='M82TxF8orR5dgmC8jZ9GYeRNpc5RWtrRHk' id='donte' hidden /><span id='qrcoded'></span>--></p>
+		<p id=abouty>Please donate to <span href="shnd: SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2" id="hooverssss2">SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2</span> if you found this project useful! <!--<hr hidden /><input type='text' value='SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' id='donte' hidden /><span id='qrcoded'></span>--></p>
 		</div>
     </div>
 	
 	<br>
 	
-	<hr style="border:1px solid #EDA0A0" />
+	<hr style="border:1px solid #EADB89" />
 	
 	<p id=bottmfo>This page uses javascript to generate your addresses within your browser, this means we <i>never</i> receive your private keys, this can be independently verified by reviewing the source code on <a href="https://github.com/01Fedda/SHND-SHMNwebwallets" target="_blank" id="hooversssss">github</a>.</p>
 						<!--<p class="text-muted">Always consider using this page offline.</p>-->
@@ -219,8 +221,8 @@
 	<div id="borstyle1"></div>
 	
 	<div id="footer">
-		<p><a href="https://www.stronghands.io/masternodes" id="shmnlink" target="_blank" title="StrongHands Masternode Website">stronghands.io/masternodes</a></p>
-		<p id=verson>Version 2.4.0.0-basic</p>
+		<p><a href="https://www.stronghands.io" id="shndlink" target="_blank" title="StrongHands Website">stronghands.io</a></p>
+		<p id=verson>Version 0.7.3.0.1-basic</p>
     </div>
 	
 	</div>
@@ -231,7 +233,7 @@
 
 //Fedda Donate QrCode
 	/*var qrcoded = new QRCode("qrcoded", {
-    //text: "M82TxF8orR5dgmC8jZ9GYeRNpc5RWtrRHk",
+    //text: "SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2",
     width: 80,
     height: 80,
     colorDark : "#000000",
@@ -280,7 +282,7 @@ function home() {
 
 function wallet() {
 	document.getElementById("wallet").show();
-	document.getElementById("hoovers").style.color = "#FF3131";
+	document.getElementById("hoovers").style.color = "gold";
 	document.getElementById("hooversa").style.color = "";
 	document.getElementById("content").style.display = "none";
 	document.getElementById("about").style.display = "none";
@@ -289,7 +291,7 @@ function wallet() {
 
 function wallet2() {
 	document.getElementById("wallet").show();
-	document.getElementById("hooversdub").style.color = "#FF3131";
+	document.getElementById("hooversdub").style.color = "gold";
 	document.getElementById("hooversa").style.color = "";
 	document.getElementById("openWallet").style.display = "block";
 	document.getElementById('send_form').style.display = "block";
@@ -299,7 +301,7 @@ function wallet2() {
 
 function about() {
 	document.getElementById("about").show();
-	document.getElementById("hooversa").style.color = "#FF3131";
+	document.getElementById("hooversa").style.color = "gold";
 	document.getElementById("hoovers").style.color = "";
 	document.getElementById("hooversdub").style.color = "";
 	document.getElementById("content").style.display = "none";
@@ -308,9 +310,9 @@ function about() {
 }
 
 //For Wallet
-//var tx, keys, fee = 0.000001000;
+//var tx, keys, fee = 0.01000;
 var tx, keys, fee = document.getElementById('status').value;
-//var devfee = '0.00005';
+//var devfee = '0.005';
 var devfee = document.getElementById('devfee').value = fee / 2;
 
 var inputstat = document.getElementById('status');
@@ -322,7 +324,7 @@ inputstat.addEventListener('change', function() {
 	input2dvfee.value = inputstat.value / 2;
 	
 	if(inputstat.value < 0.000001 || inputstat.value > 1 || inputstat.value.length > 8) {
-		inputstat.value = 0.000001;
+		inputstat.value = 0.01;
 		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
 		input2dvfee.value = inputstat.value / 2;
 	}
@@ -333,7 +335,7 @@ function balance_cb(amount)
 	if(isNaN(amount)) amount = '0.00'; else amount = js.format_money(amount, 8);
 	//if(isNaN(amount)) amount = '0.00'; else amount = js.format_money2(amount);
 	
-	$('balance').innerHTML = "<div id='balandtrans'><span title='click to refresh' onclick='refresh(true);' style='cursor:pointer'><span style=color:black>Balance:</span> <b id=amt style='background-color:white; color:green; padding:5px; border-radius:3px'>" + amount + ' <span style="color:#2E2E29">&nbsp&nbspSHMN</span>' + "</b></span> &nbsp&nbsp <a href='" + backend.adr_page + keys.adr + "' target=_blank rel=\"noopener noreferrer\" style='background-color:#1E1B0B; padding-top:4px; padding-bottom:5px; padding-left:10px; padding-right:10px; border-radius:3px' id='transactns'>Transacs</a></div>";
+	$('balance').innerHTML = "<div id='balandtrans'><span title='click to refresh' onclick='refresh(true);' style='cursor:pointer'>Balance: <b id=amt style='background-color:white; color:green; padding:5px; border-radius:3px'>" + amount + ' <span style="color:#2E2E29">&nbsp&nbspSHND</span>' + "</b></span> &nbsp&nbsp <a href='" + backend.adr_page + keys.adr + "' target=_blank rel=\"noopener noreferrer\" style='background-color:#1E1B0B; padding-top:4px; padding-bottom:5px; padding-left:10px; padding-right:10px; border-radius:3px' id='transactns'>Transacs</a></div>";
 }//____________________________________________________________________________
 
 function refresh(set_amount)
@@ -349,17 +351,17 @@ function refresh(set_amount)
 	var pass = js.trim($('passphrase').value);
 	var kycode = js.trim($('keyCode').value);
 	
-	if(!shmn.check_entropy(pass))
+	if(!shnd.check_entropy(pass))
 	{
 		if(confirm('Passphrase must be strong and at least 10 chars!')){return;} return;
 	}
 	
-	if(!shmn.check_entropy1(pass))
+	if(!shnd.check_entropy1(pass))
 	{
 		if(confirm('Passphrase and KeyCode cannot be the same!')){return;} return;
 	}
 	
-	if(!shmn.check_entropy2(kycode))
+	if(!shnd.check_entropy2(kycode))
 	{
 		if(confirm('KeyCode must be strong and at least 30 chars!')){return;} return;
 	}
@@ -377,7 +379,7 @@ function refresh(set_amount)
 	document.getElementById("hoovers").style.display = "none";
 	document.getElementById("hooverssss").style.display = "none";
 	document.getElementById("aboutydu").style.display = "none";
-	document.getElementById("hooversdub").style.color = "#FF3131";
+	document.getElementById("hooversdub").style.color = "gold";
 	$("openWallet").show();
 	$('send_form').show();
 	$('hooversdub').show();
@@ -416,7 +418,7 @@ function refresh(set_amount)
 	var ignoreClickOnMeElement2 = document.getElementById('hoovers15');
 	
 	var youtg = window.setInterval(function(){
-		ignoreClickOnMeElement.style.background = 'rgba(255,222,46,'+Math.abs(Math.sin(ofs))+')';
+		ignoreClickOnMeElement.style.background = 'rgba(255,0,0,'+Math.abs(Math.sin(ofs))+')';
 		ofs += 0.03;
 	}, 1);
 	
@@ -495,7 +497,7 @@ function Alerty() {
 
 //Set recommended fee
 document.getElementById('setfee').addEventListener('click', function(event) {
-	inputstat.value = 0.00001;
+	inputstat.value = 0.01;
 	inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
 	input2dvfee.value = inputstat.value / 2;
 });
@@ -506,19 +508,19 @@ function open_wallet()
 	var kycode = js.trim($('keyCode').value);
 	var kycodeHid = js.trim($('keyCodeHid').value);
 	
-	if(!shmn.check_entropy(pass))
+	if(!shnd.check_entropy(pass))
 	{
 		//if(confirm('Passphrase must be strong and at least 200 chars!')){return;} return;
 		return;
 	}
 	
-	if(!shmn.check_entropy1(pass))
+	if(!shnd.check_entropy1(pass))
 	{
 		//if(confirm('Passphrase and KeyCode cannot be the same!')){return;} return;
 		return;
 	}
 	
-	if(!shmn.check_entropy2(kycode))
+	if(!shnd.check_entropy2(kycode))
 	{
 		//if(confirm('KeyCode must be strong and at least 300 chars!')){return;} return;
 		return;
@@ -539,7 +541,7 @@ function open_wallet()
 	document.getElementById("hoovers").style.display = "none";
 	document.getElementById("hooverssss").style.display = "none";
 	//document.getElementById("aboutydu").style.display = "none";
-	document.getElementById("hooversdub").style.color = "#FF3131";
+	document.getElementById("hooversdub").style.color = "gold";
 	$("openWallet").show();
 	$('send_form').show();
 	$('hooversdub').show();
@@ -580,7 +582,7 @@ function open_wallet()
 	var ignoreClickOnMeElement2 = document.getElementById('hoovers15');
 	
 	var youtg = window.setInterval(function(){
-		ignoreClickOnMeElement.style.background = 'rgba(255,222,46,'+Math.abs(Math.sin(ofs))+')';
+		ignoreClickOnMeElement.style.background = 'rgba(255,0,0,'+Math.abs(Math.sin(ofs))+')';
 		ofs += 0.03;
 	}, 1);
 	
@@ -643,12 +645,12 @@ function open_wallet2()
 {
 	var prrivky = js.trim($('privyky').value);
 	
-	if(!shmn.check_entropy3(prrivky))
+	if(!shnd.check_entropy3(prrivky))
 	{
 		if(confirm('Enter a Private Key')){return;} return;
 	}
 	
-	if(!shmn.check_entropy4(prrivky))
+	if(!shnd.check_entropy4(prrivky))
 	{
 		if(confirm('Invalid Private Key!')){return;} return;
 	}
@@ -665,7 +667,7 @@ function open_wallet2()
 	document.getElementById("hoovers").style.display = "none";
 	document.getElementById("hooverssss").style.display = "none";
 	//document.getElementById("aboutydu").style.display = "none";
-	document.getElementById("hooversdub").style.color = "#FF3131";
+	document.getElementById("hooversdub").style.color = "gold";
 	$("openWallet").show();
 	$('send_form').show();
 	$('hooversdub').show();
@@ -686,7 +688,7 @@ function open_wallet2()
 	makeCode();
 
 ///////////////////////////////////////////////////////////////////////
-
+	
 	$('adr').value = keys.adr;
 	//$('wif').innerHTML = keys.wif;
 	$('wif').value = keys.wif;
@@ -742,7 +744,7 @@ function open_wallet2()
 			document.getElementById('543210').innerHTML = remaining;
 			setTimeout(function(){ countdown(remaining - 1); }, 1000);
 		})(3);
-		
+
 		window.onbeforeunload = null;
 	}
 	
@@ -782,7 +784,7 @@ function broadcast_cb(res)
 		
 		//Hover color change
 		document.getElementById("vwtoget").addEventListener("mouseover", function() {
-			document.getElementById("vwtoget").style.color = "#FF3131";
+			document.getElementById("vwtoget").style.color = "gold";
 			document.getElementById("vwtoget").style.backgroundColor = "#1E1B0B";
 		});
 	
@@ -792,7 +794,7 @@ function broadcast_cb(res)
 		});
 		
 		document.getElementById("clrtoget").addEventListener("mouseover", function() {
-			document.getElementById("clrtoget").style.color = "#FF3131";
+			document.getElementById("clrtoget").style.color = "gold";
 			document.getElementById("clrtoget").style.backgroundColor = "#1E1B0B";
 		});
 	
@@ -828,7 +830,7 @@ function broadcast_cb(res)
 	
 	//Hover color change
 	document.getElementById("vwtoget").addEventListener("mouseover", function() {
-		document.getElementById("vwtoget").style.color = "#FF3131";
+		document.getElementById("vwtoget").style.color = "gold";
 		document.getElementById("vwtoget").style.backgroundColor = "#1E1B0B";
 	});
 	
@@ -838,7 +840,7 @@ function broadcast_cb(res)
 	});
 		
 	document.getElementById("clrtoget").addEventListener("mouseover", function() {
-		document.getElementById("clrtoget").style.color = "#FF3131";
+		document.getElementById("clrtoget").style.color = "gold";
 		document.getElementById("clrtoget").style.backgroundColor = "#1E1B0B";
 	});
 	
@@ -864,7 +866,8 @@ function broadcast_cb(res)
 	$('status2').innerHTML = "<input id=statss type=text value='Signing tx...' readonly style='background-color:black; color:#D3D3C3; text-align:center; width:100%; padding:5px; outline:none' />";
 
 	var signed = tx.sign(keys);
-
+	//var signed = keys;
+    
 	$('status2').innerHTML = "<input id=statss type=text value='Broadcasting...' readonly style='background-color:black; color:#D3D3C3; text-align:center; width:100%; padding:5px; outline:none' />";
 
 	console.log('TX: ', signed);
@@ -891,7 +894,7 @@ function broadcast()
 
 	console.log('TX: ', signed);
 	
-	/*var filename = "SHMN Webwallet Transaction.txt";
+	/*var filename = "SHND Webwallet Transaction.txt";
 	
 	var blob = new Blob(['\r\n' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"Recommended To Keep A Record Of Transaction Info!"' + '\r\n\r\n\r\n\r\n', "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0Date:" + "  " + curntDate + '\r\n\r\n', "\xa0\xa0\xa0Sending Address:" + "  " + sendadd + '\r\n\r\n', "\xa0Receiving Address:" + "  " + receivadd + '\r\n\r\n', "\xa0\xa0\xa0\xa0\xa0\xa0\xa0Amount Sent:" + "  " + amntsnt + '\r\n\r\n', "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0Fee:" + "  " + feeuse + '\r\n\r\n', "\xa0\xa0\xa0\xa0\xa0Signed Hex ID:" + "  " + '\r\n\r\n' + signed], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, filename);*/
@@ -920,7 +923,7 @@ function unspent_cb(utxo)
 
 			return;
 		}
-		else err = "<input type=text value='Not enough, need: " + js.format_money(tx_total - total, 8) + " SHMN more.'  id='fltoget' readonly style='background-color:black; color:red; text-align:center; width:100%; padding:5px; outline:none' /> <input type=button id='clrtoget' value='Clear' style='background-color:#1E1B0B; color:#777777; text-align:center; padding-bottom:12px; padding-top:4px; padding-left:12px; padding-right:12px; margin-top:5px; cursor:pointer'; />";
+		else err = "<input type=text value='Not enough, need: " + js.format_money(tx_total - total, 8) + " SHND more.'  id='fltoget' readonly style='background-color:black; color:red; text-align:center; width:100%; padding:5px; outline:none' /> <input type=button id='clrtoget' value='Clear' style='background-color:#1E1B0B; color:#777777; text-align:center; padding-bottom:12px; padding-top:4px; padding-left:12px; padding-right:12px; margin-top:5px; cursor:pointer'; />";
 	}
 	else err = "<input type=text value='Failed to get unspent outputs!' id='fltoget' readonly style='background-color:black; color:red; text-align:center; width:100%; padding:5px; outline:none' /> <input type=button id='clrtoget' value='Clear' style='background-color:#1E1B0B; color:#777777; text-align:center; padding-bottom:12px; padding-top:4px; padding-left:12px; padding-right:12px; margin-top:5px; cursor:pointer'; />";
 
@@ -928,7 +931,7 @@ function unspent_cb(utxo)
 	
 	//Hover color change
 	document.getElementById("clrtoget").addEventListener("mouseover", function() {
-		document.getElementById("clrtoget").style.color = "#FF3131";
+		document.getElementById("clrtoget").style.color = "gold";
 		document.getElementById("clrtoget").style.backgroundColor = "#1E1B0B";
 	});
 	
@@ -950,9 +953,9 @@ function send_tx()
 {
     var dst = js.trim($('to').value), amount = parseFloat(js.trim($('amount').value));
 
-	if(dst == '' || btc.decode_adr(dst) === false || isNaN(amount) || amount < 0.000001) return;
+	if(dst == '' || btc.decode_adr(dst) === false || isNaN(amount) || amount < 0.01) return;
 
-    if(confirm('Send ' + amount + ' SHMN to ' + dst + ' ?'))
+    if(confirm('Send ' + amount + ' SHND to ' + dst + ' ?'))
     {
        	tx = btc.new_tx();
 
@@ -980,22 +983,17 @@ function send_tx()
 	
 	if(dst == '' && isNaN(amount)) {alert('Both (Address) and (Amount) text-fields can not be empty!'); $('to').focus();};
 	
-	if(btc.decode_adr(dst) === false && dst !== '') {alert('Invalid SHMN address!'); $('to').focus();};
+	if(btc.decode_adr(dst) === false && dst !== '') {alert('Invalid SHND address!'); $('to').focus();};
 	
 	if(dst == '' && !isNaN(amount)) {alert('(Address) text-field can not be empty!'); $('to').focus();};
 	
 	if(isNaN(amount) && dst !== '') {alert('(Amount) text-field can not be empty!'); $('amount').focus();};
 	
-	if(amount > 5000) {alert('Can only send up to five thousand SHMN for each out-put transaction!'); $('amount').focus();};
-	
-	var tovalue = document.getElementById('to').value;
-	var amountvalue = document.getElementById('amount').value;
-	var highfee = document.getElementById('status').value;
-	if(tovalue.length > 0 && amountvalue.length > 0 && highfee >= 0.00261) {alert('Fee is too high!'); return; $('status').focus();};
+	if(amount > 5000000) {alert('Can only send up to five million SHND for each out-put transaction!'); $('amount').focus();};
 
-	if(dst == '' || btc.decode_adr(dst) === false || isNaN(amount) || amount < 0.000001 || amount > 5000) return;
+	if(dst == '' || btc.decode_adr(dst) === false || isNaN(amount) || amount < 0.000001 || amount > 5000000) return;
 
-	if(confirm('Send: ' + js.format_money(amount, 8) + ' SHMN to "' + dst + '" & DevFee: ' + devfee + ' SHMN ?'))
+	if(confirm('Send: ' + js.format_money(amount, 8) + ' SHND to "' + dst + '" & DevFee: ' + devfee + ' SHND ?'))
     {
        	tx = btc.new_tx();
 
