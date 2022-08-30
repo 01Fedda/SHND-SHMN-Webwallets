@@ -247,6 +247,14 @@
 
 	makeCode();*/
 	
+//Ensure amount value is fixed 8
+document.getElementById("amount").addEventListener("change", toFixed8);
+function toFixed8() {
+	var num = parseFloat(this.value);
+
+	this.value = parseFloat(num.toFixed(8));
+}
+	
 //Reset button
 document.getElementById("hoovers1522").addEventListener("click", restFunction);
 function restFunction() {
