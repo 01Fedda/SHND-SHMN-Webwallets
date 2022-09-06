@@ -479,9 +479,4 @@ function removeSpaces(string) {
 	return string.split(/[^0-9.]/g).join('');
 }
 
-//Removes characters except numbers and decimals
-function removeSpaces2(string) {
-	return string.split(/[^\x00-\x7F]/g).join('');
-}
-
 //**********************************************************************************************************************************************************************************************************************************************
