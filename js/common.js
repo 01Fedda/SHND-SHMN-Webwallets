@@ -39,21 +39,6 @@ js.format_money = function(n, m, no_trim)
 	return r[0] + (r[1] != '' ? '.' + r[1] : '');
 };//___________________________________________________________________________
 
-//Fedda
-js.format_money2 = function(n) {
-    //Rounded without commas
-	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8);
-	//return (Math.round(1e15 * n) / 1e7).toFixed(8);
-	
-	//Rounded with commas
-	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-	return (Math.round(1e15 * n) / 1e7).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-	
-	//Rounded with spaces
-	//return (Math.round(1000000000000000 * n) / 10000000).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$& ');
-	//return (Math.round(1e15 * n) / 1e7).toFixed(8).replace(/\d(?=(\d{3})+\.)/g, '$& ');
-}
-
 js.ajax = function(method, url, data, cb)
 {
 	var http = new XMLHttpRequest;

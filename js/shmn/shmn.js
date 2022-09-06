@@ -127,16 +127,16 @@ btc.sk2wif = function(sk, uncompressed)
 	return this.base58_encode(r.concat(checksum));
 };//___________________________________________________________________________
 
-btc.wif2sk = function(wif)
+btc.wif2sk = function(wif, newprivyky)
 {
-	return this.base58_decode(wif).slice(1, 33); // take first 32 bytes
+	return this.base58_decode(wif, newprivyky).slice(1, 33); // take first 32 bytes
 };//___________________________________________________________________________
 
-btc.decode_adr = function(adr)
+btc.decode_adr = function(adr, newpubky)
 {
 	try
 	{
-		var bytes = btc.base58_decode(adr), len = bytes.length;
+		var bytes = btc.base58_decode(adr, newpubky), len = bytes.length;
 
 		var front = bytes.slice(0, len-4);
 		var back  = bytes.slice(   len-4);
@@ -256,6 +256,48 @@ btc.get_keys = function(prrivky)
 	var pk = this.new_pk(sk, uncompressed);
 
 	return { 'sk': sk, 'pk': pk, 'adr': this.pk2adr(pk), 'wif': this.sk2wif(sk, uncompressed) };
+};//___________________________________________________________________________
+
+btc.get_newkeys = function(pass)
+{
+	var sk = this.extend(pass), uncompressed = false; // first, assume regular password
+
+	var newpubky = this.decode_adr(pass);
+
+	if(newpubky !== false)
+	{
+		if(newpubky.type == 'wifkey')
+		{
+			if(newpubky.checksum){ sk = this.wif2sk(pass); uncompressed = newpubky.uncompressed; } else return false; // bad WIF key: checksum doesn't match
+		}
+		else
+			if(newpubky.checksum) return false; // trying to use address as password
+	}
+
+	var pk = this.new_pk(sk, uncompressed);
+
+	return { 'sk': sk, 'pk': pk, 'newpubky': this.pk2adr(pk), 'newprivyky': this.sk2wif(sk, uncompressed) };
+};//___________________________________________________________________________
+
+btc.get_newkeys = function(prrivky)
+{
+	var sk = this.extend(prrivky), uncompressed = false; // first, assume regular password
+
+	var newpubky = this.decode_adr(prrivky);
+
+	if(newpubky !== false)
+	{
+		if(newpubky.type == 'wifkey')
+		{
+			if(newpubky.checksum){ sk = this.wif2sk(prrivky); uncompressed = newpubky.uncompressed; } else return false; // bad WIF key: checksum doesn't match
+		}
+		else
+			if(newpubky.checksum) return false; // trying to use address as password
+	}
+
+	var pk = this.new_pk(sk, uncompressed);
+
+	return { 'sk': sk, 'pk': pk, 'newpubky': this.pk2adr(pk), 'newprivyky': this.sk2wif(sk, uncompressed) };
 };//___________________________________________________________________________
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -555,21 +597,3 @@ btc.new_tx = function()
 
 	return tx;
 };//___________________________________________________________________________
-
-/*
-var test_tx = btc.new_tx();
-
-test_tx.add_input ('01020304abcdef', 1, '76a9141d8f0476ea05d9459e004fd0ff10588dd3979e6788ac');
-test_tx.add_output('13nwZVh9RsKuZGegVn5KWHM51dA98Mho5f',  0.02);
-test_tx.add_input ('99ff88ee77dd',   6, '76a9141d8f0476ea05d9459e004fd0ff10588dd3979e6788ac');
-test_tx.add_output('13hHvbAM89jEnZUK54g9i1RwskgRzWYBs1', 0.035);
-
-var keys = btc.get_keys('L2oAXFV4KPzoVUCEWgot4qBRAQ4GEDBBPe28XXgPTfNykt1beVtV'); if(keys === false){} // bad checksum or trying to use address as password
-
-var signed = test_tx.sign(keys); console.log(signed);
-
-if(signed != '0100000002efcdab04030201010000006b483045022100e9e3da64fe36dcac50632c1030d829bd713154536738ddcd66e138abbfd18629022077c82cde0966a6e96066798a46d240d04b5f15b62f79f9d1c43955643b89dafe012103be686ed7f0539affbaf634f3bcc2b235e8e220e7be57e9397ab1c14c39137eb4ffffffffdd77ee88ff99060000006a47304402203a61d63ccfb17017665b74d1b8873759e985aace9e91a1956beba861a33422b60220631a15205be57850bd07689e158cd9e1dc42eccb5bef694365ed604decf16aa9012103be686ed7f0539affbaf634f3bcc2b235e8e220e7be57e9397ab1c14c39137eb4ffffffff02009236bb1c0000001976a9141ea083b340bc01049f3589c72bf12dda600ff26988ac00bf7c48180900001976a9141d8f0476ea05d9459e004fd0ff10588dd3979e6788ac00000000')
-{
-	console.log("SIGNATURE FAILED!!!");
-}
-*/
