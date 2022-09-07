@@ -118,7 +118,7 @@
                         </div>
 										
 						<div class="jumbotronfn2" id=jumbotronfn2>
-							<span id='newprwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='newprwrd1();'></span>
+							<span id='newprwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='newprwrd1();' title='Toggle: Show/Hide'></span>
 								<br><br>
 								<div id=newpubaddr>Public Address</div><input id=newpubky autocomplete='off' readonly />
 								<br><br><br><div id=newprivkey>Private Key</div><input id=newprivyky type=password autocomplete='off' readonly /><br><br><button id="newprivkyb" onclick="gen_newaddr()">Generate</button><br>
@@ -159,7 +159,7 @@
 	</div><br /><br />
 	
 	<div class="jumbotronf2" id=jumbotronf2>
-	<span id='prwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='prwrd();'></span>
+	<span id='prwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='prwrd();' title='Toggle: Show/Hide'></span>
 	<form id=pass_form2 action="javascript:open_wallet2();" autocomplete='off'>
 	<br><input id=privyky type=password placeholder="Enter a Private Key" autocomplete='off'>&nbsp;<button type='submit javascript:void();' id="hoovers151" class='bmve'>Open</button><br>
 	</form>
@@ -805,11 +805,11 @@ function broadcast_cb(res)
 	if(isNaN(getbalhtml2.value)) getbalhtml2.value = '0.00';
 	
 	if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value != 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
-		getbalhtml2.value = parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountpfee).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountpfee)).toFixed(8);
 	} else if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
-			getbalhtml2.value = parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee).toFixed(8);
+			getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee)).toFixed(8);
 	} else {
-		getbalhtml2.value = parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountfeedevfee).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountfeedevfee)).toFixed(8);
 	}
 	
 	//Wait for updated balance alerts
