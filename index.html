@@ -118,6 +118,16 @@
                         </div>
 										
 						<div class="jumbotronfn2" id=jumbotronfn2>
+							<br />
+							
+							<button id='showqr'>QR</button>
+							
+							<br id=brake hidden />
+							<br id=brake2 hidden />
+							<br id=brake3 hidden />
+							
+							<center><div id="newqrcode"></div></center>
+							
 							<span id='newprwrd1'><img src="images/shnd0.png" class=pickies style="border-radius:10px" onclick='newprwrd1();' title='Toggle: Show/Hide'></span>
 								<br><br>
 								<div id=newpubaddr>Public Address</div><input id=newpubky autocomplete='off' readonly />
@@ -295,6 +305,27 @@
 	}
 
 	makeCode();*/
+	
+//QrCode for Addr Tab
+document.getElementById("newqrcode").style.display = 'none';
+	
+var qrcode = new QRCode("newqrcode");
+	
+var brake = document.getElementById("brake");
+var brake2 = document.getElementById("brake2");
+var brake3 = document.getElementById("brake3");
+	
+document.getElementById("showqr").addEventListener('click', showCode);
+function showCode() {
+	var nwadrvalu = document.getElementById("newpubky").value = newkeys.newpubky;
+		
+	brake.show();
+	brake2.show();
+	brake3.show();
+    
+	qrcode.makeCode(nwadrvalu);
+	document.getElementById("newqrcode").style.display = 'block';
+}
 	
 //Ensure amount value is fixed 8
 document.getElementById("amount").addEventListener("change", toFixed8);

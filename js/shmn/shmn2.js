@@ -170,6 +170,12 @@ function genkycode(min, max) {
 
 //Generate new adresses, Pub and Priv keys
 function gen_newaddr(min, max) {
+	document.getElementById("newqrcode").style.display = 'none';
+	
+	document.getElementById("brake").style.display = 'none';
+	document.getElementById("brake2").style.display = 'none';
+	document.getElementById("brake3").style.display = 'none';
+	
 	num = Math.ceil(Math.random()*700)+300;
 	numHid = Math.ceil(Math.random()*1000)+500;
 	var texty = "";
@@ -280,17 +286,6 @@ function gen_newaddr(min, max) {
 
 	var nwboth = nwpass + nwkycode;
 	newkeys = btc.get_newkeys(nwboth);
-	
-	//QrCode
-	/*var qrcode = new QRCode("qrcode");
-
-	function makeCode () {      
-		var nwadrvalu = document.getElementById("newpubky").innerHTML = newkeys.adr;
-    
-		qrcode.makeCode(nwadrvalu);
-	}
-
-	makeCode();*/
 	
 	$('newpubky').value = newkeys.newpubky;
 	$('newprivyky').value = newkeys.newprivyky;
