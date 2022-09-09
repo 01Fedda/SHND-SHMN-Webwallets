@@ -114,8 +114,8 @@
 										
 						<div class="jumbotronfn2" id=jumbotronfn2>
 							<br />
-							
-							<button id='showqr'>QR</button>
+
+							<button id='showqr' title='Show/Hide QRcode'>QR +</button>
 							
 							<br id=brake hidden />
 							<br id=brake2 hidden />
@@ -125,7 +125,7 @@
 							
 							<span id='newprwrd1'><img src="images/shmn0.png" class=pickies style="border-radius:10px" onclick='newprwrd1();' title='Toggle: Show/Hide'></span>
 								<br><br>
-								<div id=newpubaddr>Public Address</div><input id=newpubky autocomplete='off' readonly />
+								<div id=newpubaddr>Public Address</div><input type='text' id=newpubky autocomplete='off' readonly />
 								<br><br><br><div id=newprivkey>Private Key</div><input id=newprivyky type=password autocomplete='off' readonly /><br><br><button id="newprivkyb" onclick="gen_newaddr()">Generate</button><br>
 						</div>
 					</div>
@@ -301,22 +301,46 @@
 //QrCode for Addr Tab
 document.getElementById("newqrcode").style.display = 'none';
 	
-var qrcode = new QRCode("newqrcode");
-	
 var brake = document.getElementById("brake");
 var brake2 = document.getElementById("brake2");
 var brake3 = document.getElementById("brake3");
+
+var qrcode2 = undefined;
+
+document.getElementById("newpubky").addEventListener('focus', generateQRCode);
+function generateQRCode() {
+	var newpubchnge = document.getElementById("newpubky").value = newkeys.newpubky;
 	
+    if(qrcode2 === undefined) {
+        qrcode2 = new QRCode(document.getElementById('newqrcode'), newpubchnge);
+    } else {
+        qrcode2.makeCode(newpubchnge);
+      }
+}
+
 document.getElementById("showqr").addEventListener('click', showCode);
 function showCode() {
-	var nwadrvalu = document.getElementById("newpubky").value = newkeys.newpubky;
+	var showqrshw = document.getElementById('showqr');
+	var newqrcodeshw = document.getElementById('newqrcode');
+	var newpubkylnth = document.getElementById('newpubky');
+	
+	if(newqrcodeshw.style.display === "none" && newpubkylnth.value.length > 0) {
+		showqrshw.innerHTML = 'QR -';
 		
-	brake.show();
-	brake2.show();
-	brake3.show();
-    
-	qrcode.makeCode(nwadrvalu);
-	document.getElementById("newqrcode").style.display = 'block';
+		brake.show();
+		brake2.show();
+		brake3.show();
+		
+		newqrcodeshw.style.display = "block";
+    } else {
+		showqrshw.innerHTML = 'QR +';
+		
+		brake.style.display = 'none';
+		brake2.style.display = 'none';
+		brake3.style.display = 'none';
+		
+		newqrcodeshw.style.display = "none";
+	  }
 }
 
 //Ensure amount value is fixed 8

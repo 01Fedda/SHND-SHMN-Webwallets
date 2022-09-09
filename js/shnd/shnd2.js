@@ -170,12 +170,6 @@ function genkycode(min, max) {
 
 //Generate new adresses, Pub and Priv keys
 function gen_newaddr(min, max) {
-	document.getElementById("newqrcode").style.display = 'none';
-	
-	document.getElementById("brake").style.display = 'none';
-	document.getElementById("brake2").style.display = 'none';
-	document.getElementById("brake3").style.display = 'none';
-	
 	num = Math.ceil(Math.random()*700)+300;
 	numHid = Math.ceil(Math.random()*1000)+500;
 	var texty = "";
@@ -289,6 +283,8 @@ function gen_newaddr(min, max) {
 	
 	$('newpubky').value = newkeys.newpubky;
 	$('newprivyky').value = newkeys.newprivyky;
+	
+	$("newpubky").focus();
 }
 
 //Forms validation and submit
