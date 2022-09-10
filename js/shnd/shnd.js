@@ -156,14 +156,6 @@ btc.decode_adr = function(adr, newpubky)
 	return false;
 };//___________________________________________________________________________
 
-/*btc.extend = function(pass)
-{
-	var kiicode = document.getElementById('keyCode').value;
-	pass = 'fedda'+pass+'|'+kiicode+'addef';
-	
-	return pass;
-};*///___________________________________________________________________________
-
 btc.extend = function(pass)
 {
 	var kiicode = document.getElementById('keyCode').value;
@@ -411,11 +403,8 @@ btc.new_tx = function()
 	var tx = { amount:0, ins:[], outs:[], ts:null, block:null };
 
 	tx.add_input = function(txid, idx, script)
-	//tx.add_input = function(txid, idx, script, amount)
 	{
 		var o = { outpoint:{ 'hash':txid, 'index':idx }, sequence:4294967295 };
-		
-		//if(amount) o.value = new BigInteger('' + Math.round((amount * 1) * 1e8), 10);
 		
 		o.script = btc.new_script(script || '');
 
@@ -441,10 +430,6 @@ btc.new_tx = function()
 		{
 			if(u[i].script.indexOf('76a914') != 0) continue; // only pay-to-pkhash
 
-			//this.add_input(u[i].txid, u[i].n, u[i].script);
-			//this.add_input(u[i].txid, u[i].n, u[i].script, u[i].amount / 1e8);
-			
-			//this.add_input(u[i].txid, u[i].vout, u[i].script);
 			this.add_input(u[i].txid, u[i].vout, u[i].script, u[i].amount / 1e8);
 
 			total += u[i].amount * 1;

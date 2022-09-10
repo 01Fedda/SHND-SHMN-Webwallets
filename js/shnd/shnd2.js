@@ -3,7 +3,6 @@
 //Account Info and backup download
 function yurinfo() {
 	var wlladdr = document.getElementById("adr").value;
-	//var wiffy = document.getElementById("wif").innerHTML;
 	var wiffy = document.getElementById("wif").value;
 	
 	var filename = "SHND Webwallet Account Info.txt";
@@ -11,31 +10,6 @@ function yurinfo() {
 	var blob = new Blob(['\r\n' + '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"Please Do Not Lose Your Account Info!"' + '\r\n\r\n\r\n\r\n', "\xa0Your Wallet Address:" + "  " + wlladdr + '\r\n\r\n', "\xa0\xa0\xa0\xa0Your Private Key:" + "  " + wiffy], {type: "text/plain;charset=utf-8"});
 	saveAs(blob, filename);
 }
-
-//Account Info and backup download as pdf file	
-/*function yurinfo() {
-	var mssge = '\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"Please Do Not Lose Your Account Info!"';
-	var wlladdr = " Your Wallet Address: \xa0";
-	var wiffy = " \xa0\xa0\xa0\xa0\xa0Your Private Key: \xa0";
-	var newlin = "<br />";
-	
-	const element = newlin + mssge + newlin + newlin + newlin + newlin + wlladdr + document.getElementById('adr').value + newlin + newlin + wiffy + document.getElementById("wif").innerHTML;
-
-	html2pdf().from(element).save();
-}*/
-
-//KeyCode generator 50 chars
-/*function genkycode() {
-	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"+'"';
-	var string_length = 50;
-	var randomstring = '';
-	
-	for (var i=0; i<string_length; i++) {
-		var rnum = Math.floor(Math.random() * chars.length);
-		randomstring += chars.substring(rnum,rnum+1);
-	}	
-	document.getElementById("keyCode").value = randomstring;
-}*/
 
 //Passphrase generator from 200 - 700 chars
 function genPassphrase(min, max) {
@@ -49,18 +23,7 @@ function genPassphrase(min, max) {
 	document.getElementById("passphrase2").value = texty;
 }
 
-//KeyCode generator from 300 - 1000 chars
-/*function genkycode(min, max) {
-	num = Math.ceil(Math.random()*700)+300;
-	var texty = "";
-	var difchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"+'"';
-
-	for (var i = 0; i < num; i++)
-		texty += difchar.charAt(Math.floor(Math.random() * difchar.length));
-
-	document.getElementById("keyCode").value = texty;
-}*/
-
+//KeyCode generator from 300 - 1000 chars ++
 function genkycode(min, max) {
 	num = Math.ceil(Math.random()*700)+300;
 	numHid = Math.ceil(Math.random()*1000)+500;
@@ -163,7 +126,6 @@ function genkycode(min, max) {
 	var hashy = [stringToHash4(texty), SHA256(texty) + stringToHash(texty), stringToHash3(texty) + sha256(texty), stringToHash(texty)];
 	var hashy2 = hashy[Math.floor(Math.random()*hashy.length)];
 
-	//document.getElementById("keyCode").value = texty;
 	document.getElementById("keyCode").value = texty + hashy2 + 'LOL' + encodedString + ranString2 + stringToHash(texty) + sha256(texty) + meereslts + stringToHash2(texty) + SHA256(texty);
 	document.getElementById("keyCodeHid").value = ranwrdsreslts + textyHid + ranwrdsreslts2;
 }
@@ -271,7 +233,6 @@ function gen_newaddr(min, max) {
 	var hashy = [stringToHash4(texty), SHA256(texty) + stringToHash(texty), stringToHash3(texty) + sha256(texty), stringToHash(texty)];
 	var hashy2 = hashy[Math.floor(Math.random()*hashy.length)];
 
-	//document.getElementById("keyCode").value = texty;
 	document.getElementById("genrateadd").value = texty + hashy2 + 'LOL' + encodedString + ranString2 + stringToHash(texty) + sha256(texty) + meereslts + stringToHash2(texty) + SHA256(texty);
 	document.getElementById("genrateaddr").value = ranwrdsreslts + textyHid + ranwrdsreslts2;
 	
@@ -290,38 +251,13 @@ function gen_newaddr(min, max) {
 //Forms validation and submit
 var shnd = { };
 
-/*shnd.check_entropy = function(pass) {
-	var pass = document.getElementById('passphrase').value;
-
-	if(pass.length >= 10) {
-		return true;
-	}
-	
-	if(pass.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{10,}$/)) {
-		return true;
-	}
-};*/
-
 shnd.check_entropy = function(pass) {
 	var pass = document.getElementById('passphrase2').value;
-
-	/*if(pass.length >= 200) {
-		return true;
-	}*/
 	
 	if(pass.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{200,}$/)) {
 		return true;
 	}
 };
-
-/*shnd.check_entropy1 = function(pass) {
-	var pass = document.getElementById('passphrase').value;
-	var kycode = document.getElementById('keyCode').value;
-	
-	if(pass !== kycode) {
-		return true;
-	}
-};*/
 
 shnd.check_entropy1 = function(pass) {
 	var pass = document.getElementById('passphrase2').value;
@@ -334,14 +270,6 @@ shnd.check_entropy1 = function(pass) {
 
 shnd.check_entropy2 = function(kycode) {
 	var kycode = document.getElementById('keyCode').value;
-	
-	/*if(kycode.length >= 30) {
-		return true;
-	}*/
-	
-	/*if(kycode.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{30,}$/)) {
-		return true;
-	}*/
 	
 	if(kycode.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{300,}$/)) {
 		return true;
@@ -364,21 +292,7 @@ shnd.check_entropy4 = function(prrivky) {
 	}
 };
 
-//Show/hide priv key
-/*function toggler() {
-	var lbox = document.getElementById('walletShowKeys2');
-	var pbox = document.getElementById('wif');
-	
-	if(lbox.value == 'Show') {
-		lbox.value = 'Hide'
-		pbox.show();
-	} else {
-		lbox.value = 'Show'
-		//pbox.hide();
-		pbox.style.display = 'none'
-	}
-}*/
-
+//Show/hide wallet
 function hoggler() {
 	var bbox = document.getElementById('shwanddonshw');
 	var cbox = document.getElementById('shwanddonshw2');
@@ -392,6 +306,7 @@ function hoggler() {
     }
 }
 
+//Show/hide priv key
 function toggler() {
 	var lbox = document.getElementById('walletShowKeys2');
 	var pbox = document.getElementById('wif');
@@ -405,30 +320,10 @@ function toggler() {
 	}
 }
 
-//SHND icon: show/hide Passphrase, KeyCode and Private Key
-/*function pwrd() {
-	var x = document.getElementById("passphrase");
-	
-	if (x.type === "password") {
-		x.type = "text";
-	} else {
-		x.type = "password";
-	}
-}*/
-
+//SHND icon: show/hide Passphrase and Private Keys
 function pwrd123() {
 	var x = document.getElementById("passphrase2");
 	
-	if (x.type === "password") {
-		x.type = "text";
-	} else {
-		x.type = "password";
-	}
-}
-
-function kwrd() {
-	var x = document.getElementById("keyCode");
-  
 	if (x.type === "password") {
 		x.type = "text";
 	} else {
