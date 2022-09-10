@@ -206,10 +206,10 @@
 		<br>
 		
 		<div id=inwallet>
-		<div id=titlewall>SHND Address:&nbsp;&nbsp;<input type='text' id='adr' readonly /><input type='button' value='Copy' id='cpyaddr' onclick='copyaddr();' /></div><p id=titlewall1><input type='button' value='Show' id="walletShowKeys2" class="hoovers11" onclick="return toggler(this);">&nbsp;Private Key:&nbsp;&nbsp;<input type=password id='wif' readonly /></p>
+		<div id=titlewall>SHND Address:&nbsp;&nbsp;<input type='text' id='adr' readonly /><button id='cpyaddr' onclick='copyaddr();'>Copy</button></div><p id=titlewall1><button id="walletShowKeys2" class="hoovers11" onclick="return toggler(this);">Show</button>&nbsp;Private Key:&nbsp;&nbsp;<input type=password id='wif' readonly /></p>
 		<br><center><p id=balance></p><div><span id=expbalancelbl>ExpBalance:</span>&nbsp;<input id=expbalance type=text value=0.00 readonly autocomplete='off' /></div></center><br><br><br>
 		<div id=titlewall2>Send To:&nbsp;&nbsp;<input id=to type=text placeholder="S" /></div><br>
-		<div id=titlewall22>Amount:&nbsp;&nbsp;<input id=amount type=text placeholder="0.00" onblur="this.value=removeSpaces(this.value);" /></div><input id=to2 type=text value="SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2" hidden readonly /><input id=devfee type=text hidden readonly /><center><p><button type=submit id="hoovers15">Send</button>&nbsp;&nbsp;&nbsp;&nbsp;<input type=button id="hoovers1522" value='Reset' /></center></p>
+		<div id=titlewall22>Amount:&nbsp;&nbsp;<input id=amount type=text placeholder="0.00" onblur="this.value=removeSpaces(this.value);" /></div><input id=to2 type=text value="SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2" hidden readonly /><input id=devfee type=text hidden readonly /><center><p><button type=submit id="hoovers15">Send</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="hoovers1522">Reset</button></center></p>
 		</div>
 		 
 		<!--<br><br><div id=status></div>-->
@@ -1011,10 +1011,24 @@ function send_tx()
 	}
 }//____________________________________________________________________________
 
+//Prevent unwanted trigger click event within form
 document.getElementById('hoovers15').addEventListener('click', function(event) {
 	event.preventDefault();
 });
 
+document.getElementById('cpyaddr').addEventListener('click', function(event) {
+	event.preventDefault();
+});
+
+document.getElementById('walletShowKeys2').addEventListener('click', function(event) {
+	event.preventDefault();
+});
+
+document.getElementById('hoovers1522').addEventListener('click', function(event) {
+	event.preventDefault();
+});
+
+//Browser support
 if(!JSON || !JSON.parse) alert("Your browser doesn't support native JSON decoding. This page will not work, sorry.");
 else
 {
