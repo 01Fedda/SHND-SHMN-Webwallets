@@ -397,10 +397,10 @@ function toggler() {
 	var pbox = document.getElementById('wif');
 	
 	if(pbox.type === "password") {
-		lbox.value = 'Hide';
+		lbox.innerHTML = 'Hide';
 		pbox.type = 'text';
 	} else {
-		lbox.value = 'Show';
+		lbox.innerHTML = 'Show';
 		pbox.type = 'password';
 	}
 }
