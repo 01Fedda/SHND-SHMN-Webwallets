@@ -182,8 +182,8 @@
 											</div><br><br>
 											<div class="jumbotron">
 												<form id=send_form>
-		<div id="dotherightthing"><center><b><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><div class=dotherightthing><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>(Send) button is disabled until (Account Info) is saved.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before sending a large transaction.</p><p>If available balance is not updated, sending an identical transaction will show the current TX-hash or may say transaction already exists, please wait till available balance is updated.</p><p>ExpBalance is the calculated expected balance if a transaction is sent.</p><p>Account user is responsible for any loss of coins.</p></div></b></center></div>
-		<div id="dotherightthing2"><b><center><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><div class=dotherightthing2><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before sending a large transaction.</p><p>If available balance is not updated, sending an identical transaction will show the current TX-hash or may say transaction already exists, please wait till available balance is updated.</p><p>ExpBalance is the calculated expected balance if a transaction is sent.</p><p>Account user is responsible for any loss of coins.</p></div></b></center></div>
+		<div id="dotherightthing"><center><b><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><div class=dotherightthing><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>(Send) button is disabled until (Account Info) is saved.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before sending a large transaction.</p><p>If available balance is not updated, sending an identical transaction will show <i style='color:black'>'transaction already in block chain'</i>, please wait till available balance is updated.</p><p>ExpBalance is the calculated expected balance if a transaction is sent.</p><p>Account user is responsible for any loss of coins.</p></div></b></center></div>
+		<div id="dotherightthing2"><b><center><p id=impoinfo style="color:green; text-decoration:underline">IMPORTANT INFO</p><div class=dotherightthing2><p style="color:red">First, please ensure that you have a saved copy of your (Account Info) before using this wallet.</p><p>Webwallet will automatically logout if inactive for five minutes.</p><p>Enter correct information when using the text-fields.</p><p>Always test sending a small amount before sending a large transaction.</p><p>If available balance is not updated, sending an identical transaction will show <i style='color:black'>'transaction already in block chain'</i>, please wait till available balance is updated.</p><p>ExpBalance is the calculated expected balance if a transaction is sent.</p><p>Account user is responsible for any loss of coins.</p></div></b></center></div>
 		</div><br><br>
 		
 		<div class="jumbotron">
@@ -797,7 +797,7 @@ function broadcast_cb(res)
 	if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value != 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
 		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountpfee)).toFixed(8);
 	} else if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
-			getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee)).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee)).toFixed(8);
 	} else {
 		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountfeedevfee)).toFixed(8);
 	}
@@ -806,6 +806,26 @@ function broadcast_cb(res)
 	var waitstats = document.getElementById('fltoget').value;
 	var waitstats2 = document.getElementById('status2');
 	
+	//LocalStorage usage for identical TXID
+	if (typeof(Storage) !== "undefined") {
+		var alrdysntTX = waitstats;
+		
+		let getalrdysntTX = localStorage.getItem("TXinStorage") || '[]';
+
+		localStorage.setItem('alrdysntTX', alrdysntTX);
+	
+		if(alrdysntTX.startsWith('Result: {"txid')) localStorage.setItem("TXinStorage", alrdysntTX);
+	
+		if(getalrdysntTX.startsWith('Result: {"txid') && getalrdysntTX == alrdysntTX) {
+			document.getElementById("fltoget").value = 'Result: transaction already in block chain (code -27)';
+		}
+	
+		console.log('getalrdysntTX:', getalrdysntTX);
+	} else {
+		alert('Your browser does not support localStorage!');
+	  }
+	
+	//Wait for updated balance alert
 	if(waitstats.startsWith('Result: Gen') || waitstats.startsWith('Result: Transaction rejected by network (code -26). Reason: 18: bad-txns-inputs-spen')) {alert('Please wait till available balance is updated thru the blockchain explorer before sending another transaction.'); getbalhtml2.value = 'Null'; waitstats2.style.display = 'none';} else waitstats2.style.display = 'block';
 	
 	//Fee is too low alert
