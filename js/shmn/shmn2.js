@@ -14,19 +14,21 @@ function yurinfo() {
 //Passphrase generator from 200 - 700 chars
 function genPassphrase(min, max) {
 	num = Math.ceil(Math.random()*500)+200;
+	var curntDate = new Date().toLocaleString();
 	var texty = "";
 	var difchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"+'"'+' '+'\xa0\xa0'+'\xa0\xa0\xa0'+'\xa0\xa0\xa0\xa0'+'\xa0\xa0\xa0\xa0\xa0';
 
 	for (var i = 0; i < num; i++)
 		texty += difchar.charAt(Math.floor(Math.random() * difchar.length));
 
-	document.getElementById("passphrase2").value = texty;
+	document.getElementById("passphrase2").value = texty + curntDate;
 }
 
 //KeyCode generator from 300 - 1000 chars ++
 function genkycode(min, max) {
 	num = Math.ceil(Math.random()*700)+300;
 	numHid = Math.ceil(Math.random()*1000)+500;
+	var curntDate = new Date().toLocaleString();
 	var texty = "";
 	var textyHid = "";
 	var difchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~诶比西迪伊艾弗吉艾尺艾杰开艾勒艾马艾娜哦屁吉吾艾儿艾丝提伊吾维豆贝尔维艾克斯吾艾贼德ēàúāí"+'"';
@@ -127,13 +129,14 @@ function genkycode(min, max) {
 	var hashy2 = hashy[Math.floor(Math.random()*hashy.length)];
 
 	document.getElementById("keyCode").value = texty + hashy2 + 'LOL' + encodedString + ranString2 + stringToHash(texty) + sha256(texty) + meereslts + stringToHash2(texty) + SHA256(texty);
-	document.getElementById("keyCodeHid").value = ranwrdsreslts + textyHid + ranwrdsreslts2;
+	document.getElementById("keyCodeHid").value = curntDate + ranwrdsreslts + textyHid + ranwrdsreslts2;
 }
 
 //Generate new adresses, Pub and Priv keys
 function gen_newaddr(min, max) {	
 	num = Math.ceil(Math.random()*700)+300;
 	numHid = Math.ceil(Math.random()*1000)+500;
+	var curntDate = new Date().toLocaleString();
 	var texty = "";
 	var textyHid = "";
 	var difchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&'()*+,-./:;<=>?@[\]^_`{|}~诶比西迪伊艾弗吉艾尺艾杰开艾勒艾马艾娜哦屁吉吾艾儿艾丝提伊吾维豆贝尔维艾克斯吾艾贼德ēàúāí"+'"';
@@ -234,7 +237,7 @@ function gen_newaddr(min, max) {
 	var hashy2 = hashy[Math.floor(Math.random()*hashy.length)];
 
 	document.getElementById("genrateadd").value = texty + hashy2 + 'LOL' + encodedString + ranString2 + stringToHash(texty) + sha256(texty) + meereslts + stringToHash2(texty) + SHA256(texty);
-	document.getElementById("genrateaddr").value = ranwrdsreslts + textyHid + ranwrdsreslts2;
+	document.getElementById("genrateaddr").value = ranwrdsreslts + curntDate + textyHid + ranwrdsreslts2;
 	
 	var nwpass = js.trim($('genrateadd').value);
 	var nwkycode = js.trim($('genrateaddr').value);
