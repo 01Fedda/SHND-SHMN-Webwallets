@@ -32,7 +32,8 @@
 
 </head>
 
-<body>
+<body id=theBody>
+	<center id=cntrbody><img src="images/shnd.png" id=bodyimg /><br id=introbrk /><br id=introbrk2 /><h2 id=introshnd>SHND Webwallet</h2></center>
 	
 	<div id='oneaboveall'>
 			
@@ -53,6 +54,7 @@
 			<center><img src="images/shnd0.png" id='reasonpic' style="margin-top:30px"></center>
 			<h2 id='reason'></h2>
 			
+			<div id=fillspace0></div>
 			<div id=fillspace></div>
 			</div>
 			
@@ -274,6 +276,37 @@
 <!-- ****************************************************************************************************************************************************************************************************************************************** -->
 
 <script>
+
+//bodyintro load effect
+document.getElementById("theBody").onload = function() {
+	var cntrbody = document.getElementById("cntrbody");
+	var bodyimage = document.getElementById("bodyimg");
+	var introbrk = document.getElementById("introbrk");
+	var introbrk2 = document.getElementById("introbrk2");
+	var introshnd = document.getElementById("introshnd");
+	var oneaboveall = document.getElementById("oneaboveall");
+	
+	introbrk.style.display = 'none';
+	introbrk2.style.display = 'none';
+	introshnd.style.display = 'none';
+	oneaboveall.style.display = 'none';
+	
+	setTimeout(function(){
+		bodyimage.classList.toggle('fade');
+		introbrk.style.display = 'block';
+		introbrk2.style.display = 'block';
+		introshnd.style.display = 'block';
+	}, 1000);
+   
+	setTimeout(function(){
+		cntrbody.style.display = 'none';
+		bodyimage.style.display = 'none';
+		introbrk.style.display = 'none';
+		introbrk2.style.display = 'none';
+		introshnd.style.display = 'none';
+		oneaboveall.style.display = 'block';
+	}, 2000);
+}
 	
 //QrCode for Addr Tab
 document.getElementById("newqrcode").style.display = 'none';
@@ -336,6 +369,7 @@ function restFunction() {
 }
 
 //Hide contents
+document.getElementById("fillspace0").style.display = "none";
 document.getElementById("fillspace").style.display = "none";
 document.getElementById("fillspace3").style.display = "none";
 document.getElementById("reasonpic").style.display = "none";
@@ -698,6 +732,7 @@ function open_wallet2()
 		$('adr').innerHTML = '';
 		document.getElementById("reasonpic").style.display = 'block';
 		document.getElementById("reason").style.display = 'block';
+		document.getElementById("fillspace0").style.display = "block";
 		document.getElementById("fillspace").style.display = "block";
 		document.getElementById("fillspace2").style.display = "block";
 		document.getElementById("fillspace3").style.display = "none";
