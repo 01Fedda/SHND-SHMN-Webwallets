@@ -511,9 +511,63 @@ function Alerty() {
 
 //Set recommended fee
 document.getElementById('setfee').addEventListener('click', function(event) {
-	inputstat.value = 0.00001;
-	inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
-	input2dvfee.value = inputstat.value / 2;
+	var amountforfee = document.getElementById('amount').value;
+	
+	if(amountforfee > 4000 && amountforfee <= 5000) {
+		inputstat.value = 0.001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 3000 && amountforfee <= 4000) {
+		inputstat.value = 0.0005;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 2000 && amountforfee <= 3000) {
+		inputstat.value = 0.0001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 1000 && amountforfee <= 2000) {
+		inputstat.value = 0.00005;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee <= 1000) {
+		inputstat.value = 0.00001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+});
+
+document.getElementById('amount').addEventListener('change', function(event) {
+	var amountforfee = document.getElementById('amount').value;
+	
+	if(amountforfee > 4000 && amountforfee <= 5000) {
+		inputstat.value = 0.001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 3000 && amountforfee <= 4000) {
+		inputstat.value = 0.0005;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 2000 && amountforfee <= 3000) {
+		inputstat.value = 0.0001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee > 1000 && amountforfee <= 2000) {
+		inputstat.value = 0.00005;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
+	else if(amountforfee <= 1000) {
+		inputstat.value = 0.00001;
+		inputstat3.innerHTML = 'DevFee: ' + inputstat.value / 2;
+		input2dvfee.value = inputstat.value / 2;
+	}
 });
 
 function open_wallet()
