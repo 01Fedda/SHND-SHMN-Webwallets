@@ -830,11 +830,11 @@ function broadcast_cb(res)
 	if(isNaN(getbalhtml2.value)) getbalhtml2.value = '0.00';
 	
 	if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value != 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
-		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountpfee)).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountpfee)).toFixed(8).replace(/\B(?=(\d{3})+\.\d\d)/g, ",");
 	} else if(getadr.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2' && getto2.value == 'SRA5pyXBh4KQcPgCL7pTBd8ceSeJpEf3L2') {
-		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee)).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountmfee)).toFixed(8).replace(/\B(?=(\d{3})+\.\d\d)/g, ",");
 	} else {
-		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountfeedevfee)).toFixed(8);
+		getbalhtml2.value = (parseFloat(getbalhtml.innerHTML.replace(/,/g, '')) - parseFloat(amountfeedevfee)).toFixed(8).replace(/\B(?=(\d{3})+\.\d\d)/g, ",");
 	}
 	
 	//Wait for updated balance alerts
