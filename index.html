@@ -650,6 +650,8 @@ function open_wallet()
 function open_wallet2()
 {
 	var prrivky = js.trim($('privyky').value);
+	var prrivky2 = document.getElementById("privyky");
+	var checkprrivky = btc.decode_adr(prrivky2.value);
 	
 	if(!shnd.check_entropy3(prrivky))
 	{
@@ -659,6 +661,12 @@ function open_wallet2()
 	if(!shnd.check_entropy4(prrivky))
 	{
 		if(confirm('Invalid Private Key!')){return;} return;
+	}
+	
+	if(checkprrivky === false) {
+		alert('Invalid Private Key!');
+		prrivky2.value = '';
+		return;
 	}
 	
 	keys = btc.get_keys(prrivky); if(keys === false){ alert('Invalid Private Key!'); return; }
