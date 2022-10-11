@@ -360,6 +360,15 @@ function toFixed8() {
 
 	this.value = parseFloat(num.toFixed(8));
 }
+
+//Auto adjust ExpBalance width
+var expbalinput = document.getElementById('expbalance');
+expbalinput.addEventListener('input', resizexpbalInput);
+resizexpbalInput.call(expbalinput);
+
+function resizexpbalInput() {
+	this.style.width = this.value.length + "ch";
+}
 	
 //Reset button
 document.getElementById("hoovers1522").addEventListener("click", restFunction);
@@ -876,6 +885,15 @@ function broadcast_cb(res)
 	
 	//Need to refresh balance
 	if(waitstats.startsWith('Transaction sent successfull')) {alert('Please refresh your balance till available amount is shown.'); getbalhtml2.value = 'Null'; waitstats2.style.display = 'none';}
+	
+	//Auto adjust ExpBalance width
+	var expbalinput = document.getElementById('expbalance');
+	expbalinput.addEventListener('input', resizexpbalInput);
+	resizexpbalInput.call(expbalinput);
+
+	function resizexpbalInput() {
+		this.style.width = this.value.length + "ch";
+	}
 	
 	//Hover color change
 	document.getElementById("vwtoget").addEventListener("mouseover", function() {
